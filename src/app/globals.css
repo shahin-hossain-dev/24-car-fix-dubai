@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "Bai Jamjuree";
+  src: url("/fonts/BaiJamjuree-Bold.ttf") format("truetype");
+}
+
+@theme {
+  /* Primary Colors */
+  --color-primary-50: rgb(230, 255, 240); /* very light */
+  --color-primary-100: rgb(179, 245, 212); /* light */
+  --color-primary-300: rgb(102, 230, 162); /* medium-light */
+  --color-primary-500: rgb(0, 201, 80); /* base color */
+  --color-primary-700: rgb(0, 160, 65); /* dark */
+  --color-primary-900: rgb(0, 110, 45); /* very dark */
+  /* Secondary Colors */
+  --color-secondary-50: #f9f9f9;
+  --color-secondary-100: #ededed;
+  --color-secondary-300: #d1d1d1;
+  --color-secondary-500: #c0c0c0;
+  --color-secondary-700: #8a8a8a;
+  --color-secondary-900: #4a4a4a;
+
+  /* Neutral colors */
+  --color-neutral-50: #f5f5f5;
+  --color-neutral-100: #e0e0e0;
+  --color-neutral-300: #4a4a4a;
+  --color-neutral-500: #121212;
+  --color-neutral-700: #0d0d0d;
+  --color-neutral-900: #000000;
+
+  /* -- font --  */
+  --font-bai-jamjuree: "Bai Jamjuree", sans-serif;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+/* 
+.font-bai-jamjuri {
+  font-family: "Bai Jamjuree", sans-serif;
+  font-weight: bold;
+} */
+
+body {
+  /* width: 100%; */
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  scrollbar-width: smooth;
+  @apply overflow-x-hidden max-w-[1440px] mx-auto;
+}
+
+ol,
+ul,
+dl,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 !important;
+}
+
+/* -----------------------
+        css utilities 
+  -------------------------*/
+
+@utility flex-center {
+  @apply flex justify-center items-center;
+}
+
+@utility col-center {
+  @apply flex flex-col justify-center items-center;
+}
+
+@utility position-center {
+  @apply absolute top-1/2 left-1/2 -translate-1/2;
+}
+
+@utility text-gradient {
+  background: linear-gradient(to bottom, #ffffff, #898989);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+/* -----------------------
+        nav styles
+  -------------------------*/
+
+nav.nav-container {
+  .top-nav {
+    @apply bg-primary-500/20 hidden lg:flex justify-between py-1 px-12 lg:px-24;
+  }
+  .bottom-nav {
+    .bottom-nav-body {
+      @apply top-0 backdrop-blur-md w-full left-0  flex justify-between  items-center py-2 px-4 md:px-12 lg:px-24 font-medium text-neutral-500;
+    }
+  }
+}
+/* Selected item */
+.ant-menu-item-selected {
+  background-color: #333 !important;
+  color: white !important;
+}
+
+/* -----------------------
+        brand styles
+  -------------------------*/
+.brands,
+.major-minor {
+  .ant-tabs-tab-active {
+    @apply !bg-gradient-to-b !from-primary-500 !to-primary-700;
+  }
+
+  .ant-tabs-tab-active .ant-tabs-tab-btn {
+    @apply !text-neutral-500;
+  }
+  .ant-tabs-tab-active .ant-tabs-tab-btn {
+    @apply hover:!text-neutral-500;
+  }
+  /* .ant-tabs-tab-btn:hover {
+    @apply !text-white;
+  } */
+
+  .ant-tabs-tab {
+    @apply hover:!bg-primary-500 hover:!text-neutral-500;
+  }
+}
+
+/* -----------------------
+        nav styles .
+  -------------------------*/
+
+/* mobile nav */
+.mobile-nav-body {
+  .ant-menu-item-selected {
+    @apply !bg-primary-500;
+  }
+}
+
+.ant-menu-item-selected {
+  @apply !bg-primary-500;
+}
+
+.ant-drawer-header {
+  @apply !bg-green-100;
+}
+/* -----------------------
+        footer styles 
+  -------------------------*/
+footer {
+  @apply bg-neutral-500;
+  .footer-main {
+    @apply grid grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-4 px-4 py-8 lg:p-10;
+  }
+
+  aside {
+    @apply col-span-2;
+  }
+  .footer-description {
+    @apply text-white mt-4;
+  }
+  .footer-title {
+    @apply font-semibold text-xl md:text-lg text-white font-bai-jamjuree;
+  }
+  nav {
+    @apply flex flex-col gap-3;
+    .link {
+      @apply text-white text-sm  font-light hover:underline hover:text-primary-500 cursor-pointer;
+    }
+  }
+  .social-items {
+    .link {
+      @apply text-white rounded-full flex justify-center items-center w-[40px] h-[40px];
+    }
+  }
+}

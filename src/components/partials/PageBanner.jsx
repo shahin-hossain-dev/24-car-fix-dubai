@@ -13,7 +13,7 @@ const PageBanner = ({ image, title, subTitle }) => {
           height={400}
           className="w-full h-[220px] lg:h-[350px] object-cover"
         /> */}
-        <div className="bg-gradient-to-tr from-emerald-500 via-teal-600 to-green-600 w-full h-[220px] lg:h-[350px]"></div>
+        <div className="bg-gradient-to-tr from-emerald-500 via-teal-600 to-green-600 w-full h-[280px] lg:h-[350px]"></div>
         <div className="absolute top-0 left-0 h-full w-full">
           <div className="position-center w-full grid grid-cols-1  place-items-center">
             <div className=" !space-y-2   py-5 px-8 mt-10! lg:mt-8! ">
@@ -25,7 +25,9 @@ const PageBanner = ({ image, title, subTitle }) => {
                   {subTitle}
                 </p>
               )}
-              <ButtonGroup />
+              <div className="flex justify-center items-center md:!mt-4">
+                <ButtonGroup />
+              </div>
             </div>
           </div>
         </div>

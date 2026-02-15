@@ -85,7 +85,7 @@ const Navbar = () => {
               alt="Logo"
               width={150}
               height={50}
-              className="w-[80px] lg:w-[90px]"
+              className="w-[70px] lg:w-[90px]"
             />
           </Link>
 

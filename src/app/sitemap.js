@@ -20,7 +20,7 @@ export default async function sitemap() {
 
   // all services
 
-  const res = await fetch("https://admin.batteryfixprodubai.com/api/services", {
+  const res = await fetch(`${baseApiUrl}/api/services`, {
     cache: "no-store", // important for dynamic data
   });
 

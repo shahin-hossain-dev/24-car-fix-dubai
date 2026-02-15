@@ -30,7 +30,7 @@ const WhyChooseUs = ({ data = whyChooseUs }) => {
             }
             height={500}
             width={500}
-            alt="Why choose Car Repairs Services"
+            alt="Why choose 24 Car Fix Dubai"
             className="w-full h-full rounded-2xl object-cover"
           />
           <div className="absolute flex items-end h-full top-0 left-0 rounded-2xl w-full bg-gradient-to-t from-[#000000B3] to-[#00000000]">
@@ -43,7 +43,7 @@ const WhyChooseUs = ({ data = whyChooseUs }) => {
               </div>
               <h3 className="text-base lg:text-xl text-white font-semibold mt-2 mb-2">
                 {
-                  "Car Repairs Services Dubai – Trusted by 5,000+ vehicle owners across Dubai."
+                  "24 Car Fix Dubai – Trusted by 5,000+ vehicle owners across Dubai."
                 }
               </h3>
             </div>

@@ -7,6 +7,7 @@ import { majorMinor } from "@/constants";
 import Image from "next/image";
 import { FaRegCheckCircle } from "react-icons/fa";
 import FadeRightIn from "@/components/animations/FadeRightIn";
+import { GiAutoRepair } from "react-icons/gi";
 
 const MajorMinor = () => {
   const onChange = (key) => {
@@ -34,8 +35,8 @@ const MajorMinor = () => {
                   <div className="gap-6 mt-4 space-y-3">
                     {service.includes.map((item, idx) => (
                       <div key={idx} className="flex items-center gap-2">
-                        <FaRegCheckCircle className="text-primary-500 text-lg lg:text-xl" />
-                        <h4 className="text-lg lg:text-xl">{item}</h4>
+                        <GiAutoRepair className="text-primary-500 text-lg lg:text-xl" />
+                        <h4 className="text-base md:text-lg ">{item}</h4>
                       </div>
                     ))}
                   </div>

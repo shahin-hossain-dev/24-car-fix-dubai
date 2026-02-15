@@ -74,7 +74,7 @@ const Footer = () => {
     <div>
       <footer
         className={
-          "bg-[url(/images/others/bg-scoll2-1.webp)] bg-contain bg-no-repeat  bg-center relative "
+          "bg-[url(/images/others/bg-scoll2-1.webp)] bg-contain bg-no-repeat bg-center relative"
         }
       >
         <div className="absolute inset-0 bg-black/60 "></div>
@@ -88,7 +88,7 @@ const Footer = () => {
               className="w-[150px]"
             />
             <p className="footer-description font-light">
-              Car Repairs Services Dubai. your trusted car battery repairing
+              24 Car Fix Dubai. your trusted car repairing and maintenance
               partner.
             </p>
             <div className="!space-y-4 mt-4 font-light">

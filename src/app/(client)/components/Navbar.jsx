@@ -39,14 +39,14 @@ const Navbar = () => {
     });
   }, []);
 
-  useGSAP(() => {
-    gsap.from("#bottom-nav img", {
-      x: -200,
-      opacity: 0,
-      ease: "expo.inOut",
-      duration: 1,
-    });
-  }, []);
+  // useGSAP(() => {
+  //   gsap.from("#bottom-nav img", {
+  //     x: -200,
+  //     opacity: 0,
+  //     ease: "expo.inOut",
+  //     duration: 1,
+  //   });
+  // }, []);
 
   return (
     <nav className="nav-container absolute top-0 left-0 w-full z-50 ">

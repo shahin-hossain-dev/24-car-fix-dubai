@@ -12,7 +12,9 @@ import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { ToastContainer } from "react-toastify";
 import Script from "next/script";
+import parse from "html-react-parser";
 import "@smastrom/react-rating/style.css";
+import React from "react";
 // const openSans = Open_Sans({
 //   variable: "--font-open-sans",
 //   subsets: ["latin"],
@@ -38,17 +40,36 @@ export const metadata = {
   ],
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const data = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/seo`, {
+    cache: "no-store",
+  }).then((res) => res.json());
+
+  const metaMatches = data?.data[0]?.header?.match(/<meta[^>]*>/g) || [];
+  const headScriptMatches =
+    data?.data[0]?.header?.match(/<script[^>]*>/g) || [];
+  const bodyScriptMatches =
+    data?.data[0]?.header?.match(/<script[^>]*>/g) || [];
+  const footerScriptMatches =
+    data?.data[0]?.footer?.match(/<script[^>]*>/g) || [];
+
   return (
     <html lang="en">
       <head>
+        {metaMatches.map((meta, index) => (
+          <React.Fragment key={index}>{parse(meta)}</React.Fragment>
+        ))}
+        {headScriptMatches.map((meta, index) => (
+          <React.Fragment key={index}>{parse(meta)}</React.Fragment>
+        ))}
+
         {/* search console */}
-        <meta
+        {/* <meta
           name="google-site-verification"
           content="ihUEsAqN60keSslagcQN7ngCAfdcsuoQi-rvZJzXOfU"
-        />
+        /> */}
         {/*  Google Analytics */}
-        <Script
+        {/* <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-17406932785"
           strategy="afterInteractive"
@@ -111,10 +132,13 @@ export default function RootLayout({ children }) {
               ],
             }),
           }}
-        />
+        /> */}
       </head>
       <body className={`antialiased `}>
-        <GoogleAnalytics />
+        {/* <GoogleAnalytics /> */}
+        {bodyScriptMatches.map((script, index) => (
+          <React.Fragment key={index}>{parse(script)}</React.Fragment>
+        ))}
         <AntdRegistry>
           <Navbar />
           {children}
@@ -123,6 +147,10 @@ export default function RootLayout({ children }) {
           <Conversation />
           <ToastContainer />
         </AntdRegistry>
+
+        {footerScriptMatches.map((script, index) => (
+          <React.Fragment key={index}>{parse(script)}</React.Fragment>
+        ))}
       </body>
     </html>
   );

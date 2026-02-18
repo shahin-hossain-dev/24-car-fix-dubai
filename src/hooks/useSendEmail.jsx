@@ -35,7 +35,7 @@ const useSendEmail = () => {
         },
         {
           publicKey: process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY,
-        }
+        },
       );
 
       if (res.status === 200) {
